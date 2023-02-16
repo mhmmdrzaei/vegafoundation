@@ -106,29 +106,28 @@
 
 
             <?php elseif (get_row_layout() == 'image_carousel'): ?>
-            <?php $images = get_sub_field('image_carousel_');
-                                if ($images):
-                                    if (count($images) == 1): ?>
+            <?php $images = get_sub_field('image_carousel_'); ?>
+            <?php if ($images): ?>
+            <?php if (count($images) == 1): ?>
             <img src="<?php echo esc_url($images[0]['sizes']['large']); ?>"
                 alt="<?php echo esc_attr($images[0]['alt']); ?>" />
             <p>
                 <?php echo esc_html($images[0]['caption']); ?>
             </p>
             <?php else: ?>
-            <ul>
+            <div class="slick-carousel">
                 <?php foreach ($images as $image): ?>
-                <li>
+                <div>
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
                     <p>
                         <?php echo esc_html($image['caption']); ?>
                     </p>
-                </li>
+                </div>
                 <?php endforeach; ?>
-            </ul>
-            <?php endif;
-                                endif;
-                                ?>
+            </div>
+            <?php endif; ?>
+            <?php endif; ?>
 
 
             <?php endif ?>
