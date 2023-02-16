@@ -3,12 +3,11 @@
 
 
 /* TEAM */
-  <your title>: <your name>
-  Site:
-  Twitter:
-  Location:
+  Developer & Designer: Mohammad Rezaei
+  Site: https://mohammadrezaei.com
+  Location: Canada
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: jQuery
+  Components: Javascript
   Software: WordPress
