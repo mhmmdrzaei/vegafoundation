@@ -1,6 +1,6 @@
 /*
-* Theme Name: yourthemename
-* Theme URI: http://website.com;
+* Theme Name: Vega Founcation
+* Theme URI: http://thevegafoundation.com;
 * Description: 
 * Version: 1.0
 * Author: Mohammad Rezaei
@@ -10,8 +10,6 @@
 @import 'normalize';
 @import 'typography';
 @import 'navigation';
-@import 'sidebar';
-@import 'comments';
 @import 'footer';
 /*
 ====================================
@@ -20,16 +18,19 @@ Default Styling
 */
 
 img {
-	max-width: 100%;
+	max-width: 1200px;
+	width: 100%;
+	height: auto;
 }
 
 body {
-	color: #333;
+	background: #FEFA52;
 }
 
-.container {
+main {
 	max-width: 1200px;
 	margin: 0 auto;
+	padding: 5px;
 }
 
 .content {
