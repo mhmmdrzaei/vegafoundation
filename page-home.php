@@ -28,36 +28,36 @@
         <article id="post-<?php the_ID(); ?>" class="currentPost" aria-label="CurrentPost item container">
             <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>"
                 rel="bookmark">
-                <?php the_title(); ?>
-            </a>
-            <?php the_post_thumbnail('large'); ?>
-            <section class="artistNames">
-                <?php if (have_rows('additional_artist_names')): ?>
-                <?php while (have_rows('additional_artist_names')):
-                  the_row();
-                  $artistName = get_sub_field('additional_artist_namess');
-                  if (!empty($artistName)):
-                    ; ?>
-                <h2>
-                    <?php the_sub_field('additional_artist_namess'); ?>
-                </h2>
+                <?php $images = get_field('opening_image_carousel'); ?>
+                <?php if ($images): ?>
+                <img src="<?php echo esc_url($images[0]['sizes']['large']); ?>"
+                    alt="<?php echo esc_attr($images[0]['alt']); ?>" />
                 <?php endif; ?>
+                <section class="projectInformation">
 
-                <?php endwhile; ?>
-                <?php endif; ?>
-            </section>
-            <?php $hosting = get_field('hosting_venue');
-            // if(!empty($row['oc_retailer']))
-            if (!empty($hosting)) {
-              ?>
-            <?php the_field('hosting_venue') ?>
-            <?php } ?>
-            <?php $yearProject = get_field('project_dates');
-            // if(!empty($row['oc_retailer']))
-            if (!empty($yearProject)) {
-              ?>
-            <?php the_field('project_dates') ?>
-            <?php } ?>
+                    <section class="artistNames">
+                        <?php if (have_rows('additional_artist_names')): ?>
+                        <?php while (have_rows('additional_artist_names')):
+                      the_row();
+                      $artistName = get_sub_field('additional_artist_namess');
+                      if (!empty($artistName)):
+                        ; ?>
+                        <h2>
+                            <?php the_sub_field('additional_artist_namess'); ?>
+                        </h2>
+                        <?php endif; ?>
+
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                    </section>
+                    <h3>
+                        <?php the_title(); ?>
+                    </h3>
+
+                </section>
+
+
+            </a>
 
         </article>
         <?php endif;
@@ -84,37 +84,36 @@
         <article id="post-<?php the_ID(); ?>" class="archivePost" aria-label="archive post item container">
             <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>"
                 rel="bookmark">
-                <?php the_title(); ?>
+                <?php $images = get_field('opening_image_carousel'); ?>
+                <?php if ($images): ?>
+                <img src="<?php echo esc_url($images[0]['sizes']['large']); ?>"
+                    alt="<?php echo esc_attr($images[0]['alt']); ?>" />
+                <?php endif; ?>
+                <section class="projectInformation">
+
+                    <section class="artistNames">
+                        <?php if (have_rows('additional_artist_names')): ?>
+                        <?php while (have_rows('additional_artist_names')):
+                      the_row();
+                      $artistName = get_sub_field('additional_artist_namess');
+                      if (!empty($artistName)):
+                        ; ?>
+                        <h2>
+                            <?php the_sub_field('additional_artist_namess'); ?>
+                        </h2>
+                        <?php endif; ?>
+
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                    </section>
+                    <h3>
+                        <?php the_title(); ?>
+                    </h3>
+
+                </section>
+
+
             </a>
-            <?php the_post_thumbnail('large'); ?>
-            <section class="artistNames">
-                <?php if (have_rows('additional_artist_names')): ?>
-                <?php while (have_rows('additional_artist_names')):
-                  the_row();
-                  $artistName = get_sub_field('additional_artist_namess');
-                  if (!empty($artistName)):
-                    ; ?>
-                <h2>
-                    <?php the_sub_field('additional_artist_namess'); ?>
-                </h2>
-                <?php endif; ?>
-
-                <?php endwhile; ?>
-                <?php endif; ?>
-            </section>
-            <?php $hosting = get_field('hosting_venue');
-            // if(!empty($row['oc_retailer']))
-            if (!empty($hosting)) {
-              ?>
-            <?php the_field('hosting_venue') ?>
-            <?php } ?>
-            <?php $yearProject = get_field('project_dates');
-            // if(!empty($row['oc_retailer']))
-            if (!empty($yearProject)) {
-              ?>
-            <?php the_field('project_dates') ?>
-            <?php } ?>
-
         </article>
         <?php endif;
       endwhile;
