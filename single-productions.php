@@ -3,29 +3,30 @@
     <?php if (have_posts())
         while (have_posts()):
             the_post(); ?>
+            <section class="postInformation">
+                <section class="artistNames">
+                    <?php if (have_rows('additional_artist_names')): ?>
+                        <?php while (have_rows('additional_artist_names')):
+                            the_row();
+                            $artistName = get_sub_field('additional_artist_namess');
+                            if (!empty($artistName)):
+                                ; ?>
+                                <h2>
+                                    <?php the_sub_field('additional_artist_namess'); ?>
+                                </h2>
+                            <?php endif; ?>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </section>
+                <h2 class="entry-title">
+                    <?php the_title(); ?>
+                </h2>
+
+            </section>
 
             <section class="postContainer">
-                <section class="postInformation">
-                    <section class="artistNames">
-                        <?php if (have_rows('additional_artist_names')): ?>
-                            <?php while (have_rows('additional_artist_names')):
-                                the_row();
-                                $artistName = get_sub_field('additional_artist_namess');
-                                if (!empty($artistName)):
-                                    ; ?>
-                                    <h2>
-                                        <?php the_sub_field('additional_artist_namess'); ?>
-                                    </h2>
-                                <?php endif; ?>
 
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-                    </section>
-                    <h1 class="entry-title">
-                        <?php the_title(); ?>
-                    </h1>
-
-                </section>
                 <section class="openingImages">
                     <?php $images = get_field('opening_image_carousel'); ?>
                     <?php if ($images): ?>

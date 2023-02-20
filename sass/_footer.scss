@@ -16,11 +16,14 @@ footer {
 		width: 45%;
 	}
 	.vegaInfo {
-		font-family: 'vega_bregular',serif;
+		font-family: 'vegab-regular',serif;
 		text-align: right;
+		text-transform: uppercase;
+		@include fontSize(12);
 		h2 {
 			font-family: 'vegaabcregular', serif;
 			@include fontSize(26);
+			margin: 10px 0;
 		}
 		.logo {
 			width: 102px;

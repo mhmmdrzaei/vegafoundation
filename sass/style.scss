@@ -8,7 +8,6 @@
 */
 
 @import 'normalize';
-@import 'typography';
 @import 'navigation';
 @import 'footer';
 /*
@@ -20,7 +19,7 @@ Default Styling
 // typefaces
 
 @font-face {
-    font-family: 'vega_bregular';
+    font-family: 'vega-bregular';
     src: url('../fonts/vegab-regular-webfont.woff2') format('woff2'),
          url('../fonts/vegab-regular-webfont.woff') format('woff');
     font-weight: normal;
@@ -28,15 +27,16 @@ Default Styling
 
 }
 
-
+h1, h2, h3 {
+	margin: 0;
+}
 
 
 @font-face {
-    font-family: 'hybrid_sans';
+    font-family: 'hybrid-sans';
     src: 
-	// url('../fonts/hybrid-sans-webfont.woff2') format('woff2'),
-    //      url('../fonts/hybrid-sans-webfont.woff') format('woff'),
-		 url('../fonts/HYBRID-SANS.otf') format('otf') ;
+	url('../fonts/hybrid-sans-webfont.woff2') format('woff2'),
+         url('../fonts/hybrid-sans-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -91,10 +91,14 @@ a {
 		color: black;
 	}
 }
+p {
+	margin: 0 0 10px 0;
+}
 
 body {
 	background: $yellow;
-	font-family: 'hybrid_sans';
+	font-family: 'hybrid-sans', serif;
+	@include fontSize(12);
 }
 
 main {
@@ -104,13 +108,14 @@ main {
 	background:none repeat scroll 0 0  $yellow;
 	
 }
+.container {
+	max-width: 1200px;
+margin: 0 auto;
+padding: 5px;
+}
 .homeContainer {
 	max-width: 100%;
-	.container {
-		max-width: 1200px;
-	margin: 0 auto;
-	padding: 5px;
-	}
+
 }
 
 .content {
@@ -126,6 +131,7 @@ main {
 //header nav 
  header {
 	font-family: 'vegaabcregular', serif;
+	@extend .container;
 	
 	@include fontSize(26);
 	.mobileMenu {
@@ -134,17 +140,26 @@ main {
 		border: none;
 	}
 	nav {
-		width: 50%;
-		margin-left: auto;
+		
 		z-index: 2;
+		position: relative;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+
+		// margin-left:  auto;
+
+
 		
 		ul {
 			@extend .flex;
 			align-items: flex-end;
 			margin: 25px 0;;
 			list-style: none;
+			max-width: 600px;
+			width: calc(50%);
 			position: fixed;
-			width: calc(50% - 10px);
+			left: 49%;
 			
 			padding-left: 0;
 			
@@ -160,24 +175,122 @@ main {
     padding-bottom: 50px;
     padding-top: 50px;
 	video {
-		min-width: 100%;
+		min-width: 100vh;
 
-    position: fixed;
-    top: 0;
+        position: fixed;
+    left: 50%; /* % of surrounding element */
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: -9999;
 	}
  }
 
  // site mission
  .siteMission {
+	background: $yellow;
+	margin-bottom: 25vh;
+	padding: 50px 0;
 	
-	
-	@include fontSize(26);
+	@include fontSize(30);
+	line-height: 1.3;
+
 
  }
 
+ //productions
+ .currProdHead {
+	font-family: 'vegaabcregular', serif;
+	@include fontSize(26);
+	background: $red;
+	width: fit-content;
+	text-align: left;
+	padding: 30px;
+	padding-left: 10px;
+	max-width: 320px;
+	border: 1px solid black;
 
+ }
 
+ .currentPost {
+	background: $red;
+	border: 1px solid black;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	padding: 30px;
+	text-transform: uppercase;
+	// @include fontSize(15);
+	a {
+		@extend .flex;
+		img {width: 100%;}
+		h2, .artistNames {
+			width: 45%;
+		}
+		h2 {
+			text-align: right;
+			margin: 30px 0 0 0;
+		}
+		.artistNames h2{text-align: left;}
+	}
+	
+	
+
+ }
+ .archivePosts {
+	@extend .flex;
+ }
+ .archHeading {
+	font-family: 'vegaabcregular', serif;
+	@include fontSize(26);
+	background: $blue;
+	width: fit-content;
+	text-align: left;
+	padding: 30px;
+	padding-left: 10px;
+	max-width: 320px;
+	border: 1px solid black;
+ }
+ .archivePost {
+	background: $blue;
+	border: 1px solid black;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	padding: 20px;
+	width: 49%;
+	a {
+		h2 {
+			color: white;
+			margin: 0;
+			width: 60%;
+		}
+		.artistNames h2 {
+			width: 100%;
+		}
+		img {
+			margin: 20px 0;
+			
+		}
+	}
+ }
+ //posts
+ .postInformation {
+	margin-top: 10vh;
+ }
+ .postInformation {
+	@extend .flex;
+	.artistNames, h2 {
+		width: 45%;
+		text-align: right;
+	}
+	.artistNames h2 {
+		text-align: left;
+	}
+ }
+ .postContainer {
+	background: $red;
+	padding: 20px;
+ }
+.slick-carousel  {
+	max-width: 90%;
+	margin: 0 auto;
+}
 
 
 
