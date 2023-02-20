@@ -1,3 +1,30 @@
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: calc($sizeValue / 10) * 1rem;
+}
 footer {
-	clear: both;
+	background: #FEFA52;
+	padding-bottom: 20px;
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 5px;
+		@extend .flex;
+		align-items:end;
+	}
+	.foundationDetails, .vegaInfo {
+		width: 45%;
+	}
+	.vegaInfo {
+		font-family: 'vega_bregular',serif;
+		text-align: right;
+		h2 {
+			font-family: 'vegaabcregular', serif;
+			@include fontSize(26);
+		}
+		.logo {
+			width: 102px;
+			margin-left: auto;
+		}
+	}
 }

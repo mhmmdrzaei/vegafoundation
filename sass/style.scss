@@ -17,20 +17,100 @@ Default Styling
 ====================================
 */
 
+// typefaces
+
+@font-face {
+    font-family: 'vega_bregular';
+    src: url('../fonts/vegab-regular-webfont.woff2') format('woff2'),
+         url('../fonts/vegab-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'hybrid_sans';
+    src: 
+	// url('../fonts/hybrid-sans-webfont.woff2') format('woff2'),
+    //      url('../fonts/hybrid-sans-webfont.woff') format('woff'),
+		 url('../fonts/HYBRID-SANS.otf') format('otf') ;
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SFBody';
+    src: url('../fonts/san_francisco-webfont.woff2') format('woff2'),
+         url('../fonts/san_francisco-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'vegaabcregular';
+    src: url('../fonts/VegaABC.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: calc($sizeValue / 10) * 1rem;
+}
+
+$red: #EB4E27;
+$blue:#4B57E8;
+$yellow:#FEFA52;
+
+html {
+    scroll-behavior: smooth;
+}
+
 img {
 	max-width: 1200px;
 	width: 100%;
 	height: auto;
 }
+.flex {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-between;
+}
+a {
+	color: black;
+	text-decoration: none;
+	&:hover {
+		color: black;
+	}
+}
 
 body {
-	background: #FEFA52;
+	background: $yellow;
+	font-family: 'hybrid_sans';
 }
 
 main {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 5px;
+	background:none repeat scroll 0 0  $yellow;
+	
+}
+.homeContainer {
+	max-width: 100%;
+	.container {
+		max-width: 1200px;
+	margin: 0 auto;
+	padding: 5px;
+	}
 }
 
 .content {
@@ -42,6 +122,59 @@ main {
 .full {
 	width: 100%;
 }
+
+//header nav 
+ header {
+	font-family: 'vegaabcregular', serif;
+	
+	@include fontSize(26);
+	.mobileMenu {
+		display: none;
+		background: transparent;
+		border: none;
+	}
+	nav {
+		width: 50%;
+		margin-left: auto;
+		z-index: 2;
+		
+		ul {
+			@extend .flex;
+			align-items: flex-end;
+			margin: 25px 0;;
+			list-style: none;
+			position: fixed;
+			width: calc(50% - 10px);
+			
+			padding-left: 0;
+			
+		   }
+
+	} 
+
+ }
+
+ //home page video
+ .ParallaxVideo {
+	height: 100vh;
+    padding-bottom: 50px;
+    padding-top: 50px;
+	video {
+		min-width: 100%;
+
+    position: fixed;
+    top: 0;
+    z-index: -9999;
+	}
+ }
+
+ // site mission
+ .siteMission {
+	
+	
+	@include fontSize(26);
+
+ }
 
 
 
