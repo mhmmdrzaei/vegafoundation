@@ -15,7 +15,9 @@
                 <?php
                 $image = get_field('footer_logo', 'options');
                 if (!empty($image)): ?>
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('name', 'display'); ?>" rel="home">
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    </a>
                 <?php endif; ?>
 
             </section>
