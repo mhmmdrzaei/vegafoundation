@@ -291,7 +291,7 @@ padding: 5px;
  }
  .postContainer {
 	background: $red;
-	padding: 40px;
+	padding: 40px 3%;
 	font-family: 'SFBody', sans-serif;
 	a {
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -306,9 +306,13 @@ padding: 5px;
 	.projectText {
 		margin-bottom: 20px;
 	}
+	.headingSeperator {
+		margin: 30px auto;
+	}
  }
 .slick-carousel  {
 	max-width: 800px;
+	width: 90%;
 	margin: 0 auto 15px;
 }
 .slick-next:before, .slick-prev:before {
@@ -318,12 +322,56 @@ padding: 5px;
 	font-weight: 700 !important;
 	font-size: 30px !important;
 	font-family: 'SFBody', sans-serif !important;
+	opacity: 1 !important;
+	padding: 0 2px !important;
 
+}
+.slick-prev:before {
+	position: relative;
+	right: 15px;
 }
 .slick-current p {
 	@include fontSize(10);
 	margin-top: 10px;
 	text-align: center;
+}
+//videos 
+.videoOuter {
+	max-width: 800px;
+	margin: 30px auto;
+}
+.videoContainer {
+	position: relative;
+	padding-bottom: 56.25%;
+  }
+  
+  .videoContainer iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
+  }
+
+.htmlvideoContainer {
+	margin: 3px auto;
+	max-width: 800px;
+
+
+	 #my-video {
+	 	position: relative;
+	 	overflow: hidden;
+	 	max-width: 100%;
+	 	// height: auto;
+	 }
+	 
+	video {
+		width: 100%;
+		height: auto;
+	}
+}
+.vjs-control-bar {
+	display: none !important;
 }
 
 

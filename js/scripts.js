@@ -12,4 +12,7 @@ $(function(){
 		adaptiveHeight: true // Set to true to adjust the carousel's height to fit the images
 		});
 
+
+
+
 });

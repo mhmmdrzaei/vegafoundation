@@ -34,13 +34,15 @@ if (!function_exists('theme_setup')):
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support('html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption'
-		)
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption'
+			)
 		);
 
 	}
@@ -62,7 +64,7 @@ function project_styles()
 
 	wp_enqueue_style('googlefont', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500;1,600;1,700&display=swap');
 
-
+	wp_enqueue_style('vjs', 'https://vjs.zencdn.net/7.19.2/video-js.css');
 }
 
 add_action('wp_enqueue_scripts', 'project_styles');
@@ -86,7 +88,15 @@ function project_scripts()
 		//version number
 		true //load in footer
 	);
-
+	wp_enqueue_script(
+		'vjs',
+		"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://vjs.zencdn.net/7.19.2/video.min.js",
+		false,
+		//dependencies
+		null,
+		//version number
+		true //load in footer
+	);
 
 	wp_enqueue_script(
 		'slickJs',
@@ -416,7 +426,7 @@ add_action('init', 'clean_stuff_up');
 /* pre_r() - makes for easy debugging. <?php pre_r($post); ?> */
 function pre_r($obj)
 {
-echo "
+	echo "
 <pre>";
 	print_r($obj);
 	echo "</pre>";
@@ -424,17 +434,17 @@ echo "
 
 if (function_exists('acf_add_options_page')) {
 
-acf_add_options_page(
-array(
-'page_title' => 'Footer General Information',
-'menu_title' => 'General Information',
-'menu_slug' => 'theme-general-settings',
-'capability' => 'edit_posts',
-'icon_url' => 'dashicons-email-alt2',
-'position' => 7,
-'redirect' => false
-)
-);
+	acf_add_options_page(
+		array(
+			'page_title' => 'Footer General Information',
+			'menu_title' => 'General Information',
+			'menu_slug' => 'theme-general-settings',
+			'capability' => 'edit_posts',
+			'icon_url' => 'dashicons-email-alt2',
+			'position' => 7,
+			'redirect' => false
+		)
+	);
 
 
 }
@@ -443,8 +453,8 @@ array(
 /* is_blog() - checks various conditionals to figure out if you are currently within a blog page */
 function is_blog()
 {
-global $post;
-$posttype = get_post_type($post);
-return (((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ($posttype
-== 'post')) ? true : false;
+	global $post;
+	$posttype = get_post_type($post);
+	return (((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ($posttype
+		== 'post')) ? true : false;
 }
