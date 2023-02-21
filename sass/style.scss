@@ -29,6 +29,7 @@ Default Styling
 
 h1, h2, h3 {
 	margin: 0;
+	font-weight: 400;
 }
 
 
@@ -109,7 +110,7 @@ main {
 	
 }
 .container {
-	max-width: 1200px;
+	max-width: 1100px;
 margin: 0 auto;
 padding: 5px;
 }
@@ -191,7 +192,7 @@ padding: 5px;
 	margin-bottom: 25vh;
 	padding: 50px 0;
 	
-	@include fontSize(30);
+	@include fontSize(28);
 	line-height: 1.3;
 
 
@@ -203,6 +204,7 @@ padding: 5px;
 	@include fontSize(26);
 	background: $red;
 	width: fit-content;
+	margin: 30px 0;
 	text-align: left;
 	padding: 30px;
 	padding-left: 10px;
@@ -216,6 +218,8 @@ padding: 5px;
 	border: 1px solid black;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	padding: 30px;
+	max-width: 1000px;
+	margin: 0 auto 30px;
 	text-transform: uppercase;
 	// @include fontSize(15);
 	a {
@@ -244,6 +248,7 @@ padding: 5px;
 	width: fit-content;
 	text-align: left;
 	padding: 30px;
+	margin: 30px 0;
 	padding-left: 10px;
 	max-width: 320px;
 	border: 1px solid black;
@@ -275,6 +280,7 @@ padding: 5px;
  }
  .postInformation {
 	@extend .flex;
+	align-items: end;
 	.artistNames, h2 {
 		width: 45%;
 		text-align: right;
@@ -285,13 +291,40 @@ padding: 5px;
  }
  .postContainer {
 	background: $red;
-	padding: 20px;
+	padding: 40px;
+	font-family: 'SFBody', sans-serif;
+	a {
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		text-decoration: underline;
+	}
+	.hostingVenueDetails {
+		margin-bottom: 15px;
+	}
+	h1, h2, h3 {
+		margin-bottom: 10px;
+	}
+	.projectText {
+		margin-bottom: 20px;
+	}
  }
 .slick-carousel  {
-	max-width: 90%;
-	margin: 0 auto;
+	max-width: 800px;
+	margin: 0 auto 15px;
 }
+.slick-next:before, .slick-prev:before {
+	color: black !important;
+    border: 2px solid;
+    border-radius: 50%;
+	font-weight: 700 !important;
+	font-size: 30px !important;
+	font-family: 'SFBody', sans-serif !important;
 
+}
+.slick-current p {
+	@include fontSize(10);
+	margin-top: 10px;
+	text-align: center;
+}
 
 
 
