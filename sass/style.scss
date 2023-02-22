@@ -19,13 +19,19 @@ Default Styling
 // typefaces
 
 @font-face {
-    font-family: 'vega-bregular';
-    src: url('../fonts/vegab-regular-webfont.woff2') format('woff2'),
-         url('../fonts/vegab-regular-webfont.woff') format('woff');
+    font-family: 'VEGAB-Regular';
+    src: url('../fonts/vegab-regular-webfont.eot');
+    src: 
+	url('fonts/vegab-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/VEGAB-Regular.otf'),
+         url('fonts/vegab-regular-webfont.woff2') format('woff2'),
+         url('fonts/vegab-regular-webfont.woff') format('woff'),
+         url('fonts/vegab-regular-webfont.svg#vega_bregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
+
 
 h1, h2, h3 {
 	margin: 0;
@@ -34,10 +40,14 @@ h1, h2, h3 {
 
 
 @font-face {
-    font-family: 'hybrid-sans';
+    font-family: 'HYBRID-SANS';
+    src: url('fonts/hybrid-sans-webfont.eot');
     src: 
-	url('../fonts/hybrid-sans-webfont.woff2') format('woff2'),
-         url('../fonts/hybrid-sans-webfont.woff') format('woff');
+	url('fonts/hybrid-sans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/hybrid-sans-webfont.woff2') format('woff2'),
+         url('fonts/hybrid-sans-webfont.woff') format('woff'),
+         url('fonts/hybrid-sans-webfont.svg#hybridsans') format('svg'),
+		url('fonts/HYBRID-SANS.otf') ;
     font-weight: normal;
     font-style: normal;
 
@@ -45,8 +55,8 @@ h1, h2, h3 {
 
 @font-face {
     font-family: 'SFBody';
-    src: url('../fonts/san_francisco-webfont.woff2') format('woff2'),
-         url('../fonts/san_francisco-webfont.woff') format('woff');
+    src: url('fonts/sfuidisplay-regular.woff2') format('woff2'),
+         url('fonts/sfuidisplay-regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -55,8 +65,10 @@ h1, h2, h3 {
 
 
 @font-face {
-    font-family: 'vegaabcregular';
-    src: url('../fonts/VegaABC.otf') format('otf');
+    font-family: 'VegaABC';
+	src: url('fonts/vegaabc-webfont.eot');
+    src: url('fonts/VegaABC.otf'),
+	url('fonts/vegaabc-webfont.svg#hybridsans') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -98,7 +110,7 @@ p {
 
 body {
 	background: $yellow;
-	font-family: 'hybrid-sans', serif;
+	font-family: 'HYBRID-SANS', serif;
 	@include fontSize(12);
 }
 
@@ -133,7 +145,7 @@ padding: 10px;
 
 //header nav 
  header {
-	font-family: 'vegaabcregular', serif;
+	font-family: 'VegaABC', serif;
 	@extend .container;
 	
 	@include fontSize(26);
@@ -202,7 +214,7 @@ padding: 10px;
 
  //productions
  .currProdHead {
-	font-family: 'vegaabcregular', serif;
+	font-family: 'VegaABC', serif;
 	@include fontSize(26);
 	background: $red;
 	width: fit-content;
@@ -244,7 +256,7 @@ padding: 10px;
 	@extend .flex;
  }
  .archHeading {
-	font-family: 'vegaabcregular', serif;
+	font-family: 'VegaABC', serif;
 	@include fontSize(26);
 	background: $blue;
 	width: fit-content;
@@ -333,6 +345,16 @@ padding: 10px;
 	position: relative;
 	right: 15px;
 }
+.slick-next {
+	width: auto !important;
+	height: auto !important;
+	right: -40px !important; 
+	padding: 10px 0 !important;
+}
+.slick-prev {
+	width: auto !important;
+	height: auto !important;
+}
 .slick-current p {
 	@include fontSize(10);
 	margin-top: 10px;
@@ -403,11 +425,13 @@ header {
 	.mobileMenu {
 		display: block;
 		width: fit-content ;
-		text-align: right;
-		margin: 20px 0;
+		height: fit-content;
+		text-align: center;
+		// margin: 20px 0;
 		position: fixed;
 		z-index: 20;
-		right: 8px;
+		right: 0;
+		top: 10px;
 
 	}
 	nav {
@@ -427,7 +451,7 @@ header {
 			left: 50%;
 			transform: translate(-50%, -50%);
 			li {
-				margin: 30px 0;
+				margin: 0 0 40px 0;
 			}
 			
 		}

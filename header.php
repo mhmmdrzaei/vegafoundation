@@ -10,8 +10,12 @@
     </title>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <!-- stylesheets should be enqueued in functions.php -->
-    <link rel="preload" href="<?php bloginfo('template_directory'); ?>/fonts/HYBRID_SANS.otf" as="font"
-        type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="<?php bloginfo('template_directory'); ?>/fonts/VegaABC.otf" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="<?php bloginfo('template_directory'); ?>/fonts/HYBRID_SANS.otf" as="font" type="font/otf"
+        crossorigin="anonymous">
+    <link rel="preload" href="<?php bloginfo('template_directory'); ?>/fonts/VEGAB-Regular.otf" as="font"
+        type="font/otf" crossorigin="anonymous">
     <?php wp_head(); ?>
 </head>
 
