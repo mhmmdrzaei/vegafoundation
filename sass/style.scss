@@ -110,12 +110,14 @@ main {
 	
 }
 .container {
-	max-width: 1100px;
+	max-width: 1200px;
 margin: 0 auto;
-padding: 5px;
+padding: 10px;
 }
 .homeContainer {
 	max-width: 100%;
+	padding:0;
+	
 
 }
 
@@ -207,8 +209,8 @@ padding: 5px;
 	margin: 30px 0;
 	text-align: left;
 	padding: 30px;
-	padding-left: 10px;
-	max-width: 320px;
+	// padding-left: 10px;
+	max-width: 350px;
 	border: 1px solid black;
 
  }
@@ -249,8 +251,8 @@ padding: 5px;
 	text-align: left;
 	padding: 30px;
 	margin: 30px 0;
-	padding-left: 10px;
-	max-width: 320px;
+	// padding-left: 10px;
+	max-width: 350px;
 	border: 1px solid black;
  }
  .archivePost {
@@ -291,6 +293,7 @@ padding: 5px;
  }
  .postContainer {
 	background: $red;
+	border: 1px solid black;
 	padding: 40px 3%;
 	font-family: 'SFBody', sans-serif;
 	a {
@@ -399,11 +402,12 @@ padding: 5px;
 header {
 	.mobileMenu {
 		display: block;
-		width: 98%;
+		width: fit-content ;
 		text-align: right;
-		margin: 20px 20px 0 0;
+		margin: 20px 0;
 		position: fixed;
 		z-index: 20;
+		right: 8px;
 
 	}
 	nav {
@@ -428,6 +432,9 @@ header {
 			
 		}
 	}
+	.openNav{
+		display: block;
+	}
 
 }
 .email {
@@ -436,7 +443,76 @@ header {
 
 
 }
-@media(max-width: 950px){ }
+@media(max-width: 700px){ 
+	//main
+	main {
+		padding: 10px;
+	}
+	//site mission mobile
+	.siteMission {
+		@include fontSize(20);
+		padding: 30px 20px;
+	}
+	// posts mobile
+	.currProdHead, .archHeading {
+		max-width: 100%;
+		width: 100%;
+		text-align: center;
+	}
+	.currentPost { padding: 20px;}
+	.currentPost a {
+		img {
+			order: 2;
+
+		}
+		h2 {
+			order: 3;
+			width: 100%;
+			text-align: left;
+			
+		}
+		.artistNames {
+			order: 1;
+			width: 100%;
+			h2 {
+				margin: 0 0 20px;
+			}
+			
+		}
+	}
+	.archivePost {
+		width: 100%;
+	}
+// single posts mobile
+.postInformation {
+	margin-bottom: 30px;
+	.entry-title, .artistNames,.artistNames h2{
+		width: 100%;
+		text-align: center;
+	}
+}
+.slick-carousel {
+	width: 80%;
+}
+
+ //footer mobile
+ footer {
+	.foundationDetails{
+		order: 2;
+		width: 100%;
+		text-align: center;
+	}
+	.vegaInfo {
+		order: 1;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 20px;
+		.logo {
+			margin: 0 auto 10px;
+		}
+	}
+ }
+}
 
 
 

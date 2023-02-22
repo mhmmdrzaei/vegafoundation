@@ -3,8 +3,8 @@
     <?php if (have_posts())
     while (have_posts()):
       the_post(); ?>
-    <div class="ParallaxVideo">
-        <video autoplay muted loop>
+    <div class="ParallaxVideo" id="ParallaxVideo">
+        <video autoplay muted loop playsinline>
             <source src="https://thevegafoundation.com/wp-content/uploads/2022/04/vega-lamps-on-v1_website_compress.mp4"
                 type="video/mp4">
             <!-- <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"> -->
@@ -37,7 +37,7 @@
       );
       $query = new WP_Query($args);
       if ($query->have_posts()):
-        echo '<h2 class="currProdHead">Current Productions</h2>';
+        echo '</div><h2 class="currProdHead">Current Productions</h2><div class="container">';
         while ($query->have_posts()):
           $query->the_post();
           if (get_field('is_a_current_project_') == 'Current'): ?>
@@ -91,7 +91,7 @@
       );
       $query = new WP_Query($args);
       if ($query->have_posts()):
-        echo '<h2 class="archHeading">Archive Productions</h2><div class="archivePosts">';
+        echo '</div><h2 class="archHeading">Archive Productions</h2><div class="archivePosts"><div class="container">';
         while ($query->have_posts()):
           $query->the_post();
           if (get_field('is_a_current_project_') == 'Archive'): ?>

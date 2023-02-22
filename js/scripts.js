@@ -11,8 +11,33 @@ $(function(){
 		lazyLoad: 'progressive',
 		adaptiveHeight: true // Set to true to adjust the carousel's height to fit the images
 		});
-
+//hamburger menu
+$('.mobileMenu').click(function(){
+	$('header nav').toggleClass('openNav');
+	
+	$(this).toggleClass('open');
+    var isOpen = $(this).hasClass('open');
+    if (isOpen) {
+      $(this).text('Close');
+    } else {
+      $(this).text('Menu');
+    }
+	});
 
 
 
 });
+
+const video = document.querySelector('#ParallaxVideo video');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+});
+
+observer.observe(video);
