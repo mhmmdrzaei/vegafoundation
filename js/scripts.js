@@ -28,6 +28,18 @@ $('.mobileMenu').click(function(){
 
 });
 
+
+$('.menu-item').click(function(){
+	if($('header nav').hasClass('openNav')) {
+		$('header nav').removeClass('openNav');
+		$('.mobileMenu').toggleClass('open');
+		$('.mobileMenu').text('Menu');
+	}
+
+
+	});
+
+
 const video = document.querySelector('#ParallaxVideo video');
 
 const observer = new IntersectionObserver(entries => {
