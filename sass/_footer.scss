@@ -12,9 +12,18 @@ footer {
 		padding: 5px;
 		@extend .flex;
 		align-items:end;
+		.logo {
+			width: 13%;
+			a {
+				width: 102px;
+				display: block;
+		}
+			
+			// margin-left: auto;
+		}
 	}
 	.foundationDetails, .vegaInfo {
-		width: 45%;
+		width: 40%;
 	}
 	.vegaInfo {
 		font-family: 'VEGAB-Regular',serif;
@@ -27,12 +36,16 @@ footer {
 		}
 		h2 {
 			font-family: 'VegaABC', serif;
-			@include fontSize(26);
+			text-transform: uppercase;
+			@include fontSize(16);
 			margin: 10px 0;
 		}
-		.logo {
-			width: 102px;
-			margin-left: auto;
-		}
+
+	}
+}
+.foundationDetails {
+	p {
+		margin: 0;
+		margin-top:10px;
 	}
 }

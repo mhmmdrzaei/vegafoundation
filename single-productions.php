@@ -31,11 +31,14 @@
             <?php $images = get_field('opening_image_carousel'); ?>
             <?php if ($images): ?>
             <?php if (count($images) == 1): ?>
-            <img src="<?php echo esc_url($images[0]['sizes']['large']); ?>"
-                alt="<?php echo esc_attr($images[0]['alt']); ?>" />
-            <p>
-                <?php echo esc_html($images[0]['caption']); ?>
-            </p>
+            <figure class="singleImage">
+                <img src="<?php echo esc_url($images[0]['sizes']['large']); ?>"
+                    alt="<?php echo esc_attr($images[0]['alt']); ?>" />
+                <p>
+                    <?php echo esc_html($images[0]['caption']); ?>
+                </p>
+            </figure>
+
             <?php else: ?>
             <div class="slick-carousel">
                 <?php foreach ($images as $image): ?>
@@ -115,10 +118,15 @@
 
             <section class="htmlvideoContainer" aria-label="video with play button, with no other controls">
                 <?php $videoFile = get_sub_field('upload_video_file') ?>
-                <video id="my-video" class="video-js medium  vjs-layout-medium vjs-16-9" preload="auto" controls="play"
-                    width="750" height="422" poster="<?php the_sub_field('placeholder_image') ?>"
-                    data-setup="{'fluid': true}">
-                    <source src="<?php echo esc_html($videoFile['url']) ?>" type="video/mp4" />
+
+                <!-- <video id="my-video" class="video-js   vjs-layout-medium vjs-16-9" preload="auto" controls="play"
+                    width="750" height="422" 
+                    data-setup="{'fluid': true}"> -->
+
+                <video id="my-video" poster="<?php the_sub_field('placeholder_image') ?>"
+                    class='video-js medium vjs-default-skin' controls preload="auto"
+                    data-setup='{"fluid": true, "autoplay":true,"html5": {"vhs": {"overrideNative": true},"nativeAudioTracks": false,"nativeVideoTracks": false}}'>
+                    <source src="<?php echo esc_html($videoFile['url']) ?>" />
                     <p class="vjs-no-js">
                         To view this video please enable JavaScript, and consider upgrading to a
                         web browser that
