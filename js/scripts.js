@@ -9,7 +9,7 @@ $(function(){
 		transition: 500, // Set the transition speed in milliseconds
 		slidesToShow: 1, // Set the number of images to display at a time
 		lazyLoad: 'progressive',
-		adaptiveHeight: true // Set to true to adjust the carousel's height to fit the images
+		adaptiveHeight: false // Set to true to adjust the carousel's height to fit the images
 		});
 //hamburger menu
 $('.mobileMenu').click(function(){

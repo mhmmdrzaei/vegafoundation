@@ -20,7 +20,7 @@ Default Styling
 
 @font-face {
     font-family: 'VEGAB-Regular';
-    src: url('../fonts/vegab-regular-webfont.eot');
+    src: url('fonts/vegab-regular-webfont.eot');
     src: 
 	url('fonts/vegab-regular-webfont.eot?#iefix') format('embedded-opentype'),
 		url('fonts/VEGAB-Regular.otf'),
@@ -66,13 +66,51 @@ h1, h2, h3 {
 
 @font-face {
     font-family: 'VegaABC';
-	src: url('fonts/vegaabc-webfont.eot');
-    src: url('fonts/VegaABC.otf'),
-	url('fonts/vegaabc-webfont.svg#hybridsans') format('svg');
+	// src: url('fonts/vegaabc-webfont.eot');
+    
+	// src: url('fonts/vegaabc-webfont.svg#vegaabc') format('svg');
+	src: url('fonts/VegaABC.otf');
     font-weight: normal;
     font-style: normal;
 
 }
+// @font-face {
+//     font-family: 'VegaABCTwo';
+// 	// src: url('fonts/vegaabc-webfont.eot');
+//     src: url('../fonts/VegaABC.otf');
+// 	// url('fonts/vegaabc-webfont.svg#hybridsans') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+
+// }
+
+// /* Chrome 29+ */
+// @media screen and (-webkit-min-device-pixel-ratio:0)
+//   and (min-resolution:.001dpcm) {
+// 	@font-face {
+// 		font-family: 'VegaABC';
+// 		src: url('../fonts/vegaabc-webfont.eot');
+// 		src: url('../fonts/VegaABC.otf') format('otf');
+// 		// src: url('fonts/vegaabc-webfont.svg#hybridsans') format('svg');
+// 		font-weight: normal;
+// 		font-style: normal;
+	
+// 	}
+// }
+
+// /* Chrome 22-28 */
+// @media screen and (-webkit-min-device-pixel-ratio:0) {
+// 	@font-face {
+// 		font-family: 'VegaABC';
+// 		src: url('../fonts/vegaabc-webfont.eot');
+// 		src: url('../fonts/VegaABC.otf') format('otf');
+// 		// src: url('fonts/vegaabc-webfont.svg#hybridsans') format('svg');
+// 		font-weight: normal;
+// 		font-style: normal;
+	
+// 	}
+// }
+
 
 @mixin fontSize($sizeValue){
     font-size: $sizeValue * 1px;
@@ -145,7 +183,7 @@ padding: 10px;
 
 //header nav 
  header {
-	font-family: 'VegaABC', serif;
+	font-family: 'VegaABC';
 	@extend .container;
 	
 	@include fontSize(26);
@@ -190,13 +228,14 @@ padding: 10px;
     padding-bottom: 50px;
     padding-top: 50px;
 	video {
-		min-width: 100vh;
-
+		object-fit: cover;
+   		width: 100%;
+    	height: 100%;
         position: fixed;
-    left: 50%; /* % of surrounding element */
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -9999;
+    	left: 50%; /* % of surrounding element */
+   		top: 50%;
+    	transform: translate(-50%, -50%);
+    	z-index: -9999;
 	}
  }
 
@@ -220,6 +259,7 @@ padding: 10px;
 	width: fit-content;
 	margin: 30px 0;
 	text-align: left;
+	line-height: .7;
 	padding: 30px;
 	// padding-left: 10px;
 	max-width: 350px;
@@ -238,6 +278,7 @@ padding: 10px;
 	// @include fontSize(15);
 	a {
 		@extend .flex;
+		align-items: center;
 		img {width: 100%;}
 		h2, .artistNames {
 			width: 45%;
@@ -246,15 +287,19 @@ padding: 10px;
 			text-align: right;
 			margin: 30px 0 0 0;
 		}
-		.artistNames h2{text-align: left;}
+		.artistNames h2{text-align: left; width: 100%;}
 	}
 	
 	
 
  }
- .archivePosts {
-	@extend .flex;
+ .archivePosts  {
+	.container{
+		@extend .flex;
+	}
+	
  }
+
  .archHeading {
 	font-family: 'VegaABC', serif;
 	@include fontSize(26);
@@ -263,11 +308,13 @@ padding: 10px;
 	text-align: left;
 	padding: 30px;
 	margin: 30px 0;
+	line-height: .7;
 	// padding-left: 10px;
 	max-width: 350px;
 	border: 1px solid black;
  }
  .archivePost {
+	margin-bottom: 30px;
 	background: $blue;
 	border: 1px solid black;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -356,7 +403,7 @@ padding: 10px;
 	height: auto !important;
 }
 .slick-current p {
-	@include fontSize(10);
+	@include fontSize(8);
 	margin-top: 10px;
 	text-align: center;
 }
@@ -418,6 +465,7 @@ padding: 10px;
 }
 
 
+
 //media quaries
 
 @media(max-width: 950px){ 
@@ -468,6 +516,18 @@ header {
 
 }
 @media(max-width: 700px){ 
+	@font-face {
+		font-family: 'VegaABCTwo';
+		// src: url('fonts/vegaabc-webfont.eot');
+		src: url('fonts/VegaABC.otf');
+		// src: url('fonts/vegaabc-webfont.svg#hybridsans') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	
+	}
+	header, .currProdHead, .archHeading,{
+		font-family: 'VegaABCTwo';
+	}
 	//main
 	main {
 		padding: 10px;
@@ -527,6 +587,9 @@ header {
 		text-align: center;
 	}
 	.vegaInfo {
+		h2 {
+			font-family: 'VegaABCTwo';
+		}
 		order: 1;
 		width: 100%;
 		text-align: center;
