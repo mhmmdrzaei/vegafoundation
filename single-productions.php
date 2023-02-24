@@ -46,6 +46,7 @@
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
                     <p>
+
                         <?php echo esc_html($image['caption']); ?>
                     </p>
                 </div>
@@ -120,8 +121,8 @@
                 <?php $videoFile = get_sub_field('upload_video_file') ?>
 
                 <!-- <video id="my-video" class="video-js   vjs-layout-medium vjs-16-9" preload="auto" controls="play"
-                    width="750" height="422" 
-                    data-setup="{'fluid': true}"> -->
+                                        width="750" height="422" 
+                                        data-setup="{'fluid': true}"> -->
 
                 <video id="my-video" poster="<?php the_sub_field('placeholder_image') ?>"
                     class='video-js medium vjs-default-skin' controls preload="auto"
