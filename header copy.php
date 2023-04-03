@@ -26,22 +26,23 @@
         <section class="mobileMenu">
         <?php  require 'svg/menu.svg';?>
         </section>
+    
+        <!-- <button class="mobileMenu">Menu</button> -->\
         <nav>
-            <ul>
-                <li> <a href="/#About"><img src="<?php bloginfo('template_directory'); ?>/images/about.png" alt="About Menu item"></a></li>
-                <li>
-                <a href="/#productions"><img src="<?php bloginfo('template_directory'); ?>/images/productions.png" alt="Productions Menu item"></a>
-                </li>
-                <li>
-                <a href="#contact"><img src="<?php bloginfo('template_directory'); ?>/images/contact.png" alt="Contact Menu item"></a>
-
-                </li>
+            <ul id="menu-header-menu" class="menu">
+                <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="/#About"><?php  require 'svg/about.svg';?></a></li>
+                <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="/#productions"><?php  require 'svg/productions.svg';?></a></li>
+                <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="#contact"><?php  require 'svg/contact.svg';?></a></li>
             </ul>
         </nav>
-        <section class="menu">
-        </section>
-        
-    
-        <!-- <button class="mobileMenu">Menu</button> -->
+        <nav>
+            <?php wp_nav_menu(
+                array(
+                    'container' => false,
+                    'theme_location' => 'primary'
+                )
+            ); ?>
+
+        </nav>
     </header>
     <!--/.header-->

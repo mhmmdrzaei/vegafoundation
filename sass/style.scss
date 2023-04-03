@@ -208,17 +208,21 @@ padding: 10px;
 		
 		ul {
 			@extend .flex;
-			align-items: flex-end;
+			align-items: center;
 			margin: 25px 0;;
 			list-style: none;
 			max-width: 600px;
 			width: calc(50%);
 			position: fixed;
-			left: 49%;
+			left: 50%;
 			
 			padding-left: 0;
+			li a img {
+				// transform: scale(.7);
+			}
 			
 		   }
+
 
 	} 
 
