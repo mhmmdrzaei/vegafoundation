@@ -24,16 +24,19 @@
 
     <header>
         <section class="mobileMenu">
-        <?php  require 'svg/menu.svg';?>
+        <!-- <?php  require 'svg/menu.svg';?> -->
+        <img class="menuOpenButton openNow" src="<?php bloginfo('template_directory'); ?>/images/menu.svg" alt="Menu Nav">
+        <img class="menuCloseButton" src="<?php bloginfo('template_directory'); ?>/images/close.svg" alt="Close Nav">
+
         </section>
         <nav>
             <ul>
-                <li> <a href="/#About"><img src="<?php bloginfo('template_directory'); ?>/images/about.png" alt="About Menu item"></a></li>
+                <li> <a href="/#About"><img src="<?php bloginfo('template_directory'); ?>/images/about.svg" alt="About Menu item" style="height:24px;"></a></li>
                 <li>
-                <a href="/#productions"><img src="<?php bloginfo('template_directory'); ?>/images/productions.png" alt="Productions Menu item"></a>
+                <a href="/#productions"><img src="<?php bloginfo('template_directory'); ?>/images/productions.svg" alt="Productions Menu item" style="height:24px;"></a>
                 </li>
                 <li>
-                <a href="#contact"><img src="<?php bloginfo('template_directory'); ?>/images/contact.png" alt="Contact Menu item"></a>
+                <a href="#contact"><img src="<?php bloginfo('template_directory'); ?>/images/contact.svg" alt="Contact Menu item" style="height:22px;"></a>
 
                 </li>
             </ul>

@@ -37,7 +37,15 @@
       );
       $query = new WP_Query($args);
       if ($query->have_posts()):
-        echo '</div><h2 class="currProdHead">Current Productions</h2><div class="container">';
+        echo '</div>'
+        ?>
+        <img class="currProdHead desktop" src="<?php bloginfo('template_directory'); ?>/images/current prod left.svg" alt="Contact Menu item" style="width:300px;">
+        <figure class="mobileHolder" style="background:#eb4e27;">
+        <img class="currProdHead mobile" src="<?php bloginfo('template_directory'); ?>/images/current prod centered.svg" alt="Contact Menu item" style="width:300px;">
+        </figure>
+
+        <div class="container">';
+        <?php
         while ($query->have_posts()):
           $query->the_post();
           if (get_field('is_a_current_project_') == 'Current'): ?>
@@ -91,7 +99,16 @@
       );
       $query = new WP_Query($args);
       if ($query->have_posts()):
-        echo '</div><h2 class="archHeading">Past Productions</h2><div class="archivePosts"><div class="container">';
+        echo '</div>' ?>
+        <img class="archHeading desktop" src="<?php bloginfo('template_directory'); ?>/images/past left.svg" alt="Contact Menu item" style="width:300px;">
+        <figure class="mobileHolder" style="background: #4b57e8;">
+  
+        <img class="archHeading mobile" src="<?php bloginfo('template_directory'); ?>/images/past centered.svg" alt="Contact Menu item" style="width:300px;">
+      </figure>
+        <div class="container">
+          <!-- <h2 class="archHeading">Past Productions</h2><div class="archivePosts">'; -->
+        <?php
+        
         while ($query->have_posts()):
           $query->the_post();
           if (get_field('is_a_current_project_') == 'Archive'): ?>

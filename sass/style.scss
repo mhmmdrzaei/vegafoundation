@@ -482,6 +482,9 @@ padding: 10px;
 		}
 	}
 }
+.mobile {
+	display: none;
+}
 
 
 
@@ -491,15 +494,25 @@ padding: 10px;
 header {
 	.mobileMenu {
 		display: block;
-		width: fit-content ;
-		height: fit-content;
+		// width: fit-content ;
+		// height: fit-content;
 		text-align: center;
 		// margin: 20px 0;
 		position: fixed;
 		z-index: 20;
 		right: 0;
 		top: 10px;
+		img {
+			height: 30px;
+			width: fit-content;
+		}
 
+	}
+	.menuCloseButton,.menuOpenButton {
+		display: none;
+	}
+	.openNow {
+		display: block;
 	}
 	nav {
 		position: fixed;
@@ -535,6 +548,24 @@ header {
 
 }
 @media(max-width: 700px){ 
+	
+	.mobileHolder {
+		height: 122px;
+    width: 100vw;
+	position: relative;
+	.mobile {
+		display: block;
+		border: none;
+		margin: 0;
+		position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	}
+	}
+	.desktop {
+		display: none;
+	}
 	// @font-face {
 	// 	font-family: 'VegaABCTwo';
 	// 	// src: url('fonts/vegaabc-webfont.eot');

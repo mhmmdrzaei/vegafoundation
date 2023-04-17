@@ -14,13 +14,15 @@ $(function(){
 //hamburger menu
 $('.mobileMenu').click(function(){
 	$('header nav').toggleClass('openNav');
+	$('.menuOpenButton').toggleClass('openNow');
+	$('.menuCloseButton').toggleClass('openNow');
 	
 	$(this).toggleClass('open');
     var isOpen = $(this).hasClass('open');
     if (isOpen) {
-      $(this).text('Close');
+    //   $(this).text('Close');
     } else {
-      $(this).text('Menu');
+    //   $(this).text('Menu');
     }
 	});
 
@@ -33,7 +35,7 @@ $('.menu-item').click(function(){
 	if($('header nav').hasClass('openNav')) {
 		$('header nav').removeClass('openNav');
 		$('.mobileMenu').toggleClass('open');
-		$('.mobileMenu').text('Menu');
+		$('.mobileMenu .menuOpenButton').css('display',"none");
 	}
 
 

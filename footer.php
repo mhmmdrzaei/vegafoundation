@@ -21,7 +21,7 @@
         </section>
 
         <section class="vegaInfo">
-            <h2>Contact Us</h2>
+            <img src="<?php bloginfo('template_directory'); ?>/images/contact us.svg" style="width:230px;" alt="contact us">
             <section class="social_links" aria-label="Social Medial Links">
                 <?php if (have_rows('social_links', 'options')): ?>
                 <ul class="linksEach">
