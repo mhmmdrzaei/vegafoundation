@@ -301,6 +301,7 @@ padding: 10px;
 
  }
  .archivePosts  {
+	@extend .flex;
 	.container{
 		@extend .flex;
 	}
@@ -500,7 +501,7 @@ header {
 		// margin: 20px 0;
 		position: fixed;
 		z-index: 20;
-		right: 0;
+		right: 10px;
 		top: 10px;
 		img {
 			height: 30px;
@@ -520,7 +521,7 @@ header {
 		top: 0;
 			left: 0;
 			height: 100vh;
-			background: $yellow;
+			background: $blue;
 			max-width: 100%;
 		ul {
 			display: block;

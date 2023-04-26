@@ -105,7 +105,7 @@
   
         <img class="archHeading mobile" src="<?php bloginfo('template_directory'); ?>/images/past centered.svg" alt="Contact Menu item" style="width:300px;">
       </figure>
-        <div class="container">
+        <div class="archivePosts container">
           <!-- <h2 class="archHeading">Past Productions</h2><div class="archivePosts">'; -->
         <?php
         

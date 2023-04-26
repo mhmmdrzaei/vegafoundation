@@ -31,12 +31,12 @@
         </section>
         <nav>
             <ul>
-                <li> <a href="/#About"><img src="<?php bloginfo('template_directory'); ?>/images/about.svg" alt="About Menu item" style="height:24px;"></a></li>
+                <li> <a href="/#About"><img src="<?php bloginfo('template_directory'); ?>/images/about.svg" alt="About Menu item" style="height:26px; width:auto;"></a></li>
                 <li>
-                <a href="/#productions"><img src="<?php bloginfo('template_directory'); ?>/images/productions.svg" alt="Productions Menu item" style="height:24px;"></a>
+                <a href="/#productions"><img src="<?php bloginfo('template_directory'); ?>/images/productions.svg" alt="Productions Menu item" style="height:26px;width:auto;"></a>
                 </li>
                 <li>
-                <a href="#contact"><img src="<?php bloginfo('template_directory'); ?>/images/contact.svg" alt="Contact Menu item" style="height:22px;"></a>
+                <a href="#contact"><img src="<?php bloginfo('template_directory'); ?>/images/contact.svg" alt="Contact Menu item" style="height:24px;width:auto;"></a>
 
                 </li>
             </ul>
